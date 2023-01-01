@@ -1,7 +1,9 @@
 # 1. Проверка числа на простоту (простые числа - это те числа у которых делители единица и они сами);
 def is_simple(number):
+    if 4 > number > 0:
+        return True
     count = 0
-    for i in range(1, number):
+    for i in range(1, number + 1):
         count = count if number % i > 0 else count + 1
         if count > 2:
             return False
@@ -11,7 +13,7 @@ def is_simple(number):
 # 2. Выводит список всех делителей числа;
 def dividers(number):
     numbers = []
-    for i in range(1, number):
+    for i in range(1, number + 1):
         if number % i > 0:
             numbers.append(i)
 
@@ -25,7 +27,7 @@ def biggest_divider(number):
         return number
 
     max_simple_number = 0
-    for i in range(1, number):
+    for i in range(1, number + 1):
         if not number % i > 0:
             continue
         if is_simple(i):
